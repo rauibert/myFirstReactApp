@@ -1,7 +1,8 @@
 import {useState, useEffect} from "react";
 import * as API from "./services/swpeople";
 import logo from "./assets/logo.png";
-import { Heading, Box, Text } from '@chakra-ui/react';
+import { Heading, Box, Flex, Text } from '@chakra-ui/react';
+import { GoPerson, GoCalendar } from "react-icons/go";
 
 export default function App() {
   const [people, setPeople] = useState([]);
@@ -24,11 +25,10 @@ export default function App() {
           m={4} 
           borderRadius={5}
         >
-          <Box display="flex">
-            Nombre: {person.name} <br/>
-            Fecha nacimiento: {person.birth_year} 
-          </Box>
-           
+          
+          <Flex align="center"><GoPerson /><Text ml="2">Nombre: {person.name}</Text></Flex> 
+          <Flex align="center"><GoCalendar /><Text ml="2">Fecha nacimiento: {person.birth_year} </Text></Flex> 
+                     
         </Box>
       ))}
     </section>
