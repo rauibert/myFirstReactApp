@@ -3,6 +3,7 @@ import * as API from "./services/swpeople";
 import logo from "./assets/logo.png";
 import { Heading } from '@chakra-ui/react';
 import { PersonItem } from "./components/PersonItem";
+import { Routes, Route } from "react-router-dom";
 
 
 export default function App() {
