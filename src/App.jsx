@@ -1,29 +1,21 @@
-import {useState, useEffect} from "react";
-import * as API from "./services/swpeople";
-import logo from "./assets/logo.png";
-import { Heading } from '@chakra-ui/react';
-import { PersonItem } from "./components/PersonItem";
+import { PersonList } from "./components/PersonList";
+import { PersonDetails} from "./components/PersonDetails"
 import { Routes, Route } from "react-router-dom";
+import logo from "./assets/logo.png";
 
 
 export default function App() {
-  const [people, setPeople] = useState([]);
-
-  useEffect(()=>{
-    API.getAllPeople().then(setPeople);
-  }, []);
+ 
 
 
   return (
   <>
     <img src={logo} width="200"/>
-    <Heading as="h1" size="2xl">Personajes de Star Wars</Heading>
-    <section>
-      {people.map((person) => (
-        <PersonItem key={person.name} {...person} />
-      ))}
-    </section>
-
+    <Routes>
+        <Route path="/" element={<PersonList />} />
+        <Route path="people/:id" element={<PersonDetails />} />
+    </Routes>   
+    
   </>
   
   );  
