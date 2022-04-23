@@ -1,5 +1,6 @@
 import { Box, Flex, Text, Button } from '@chakra-ui/react';
 import { GoPerson, GoCalendar } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 export function PersonItem(person){
     return (
@@ -13,7 +14,10 @@ export function PersonItem(person){
           
           <Flex align="center"><GoPerson /><Text ml="2">Nombre: {person.name}</Text></Flex> 
           <Flex align="center"><GoCalendar /><Text ml="2">Fecha nacimiento: {person.birth_year} </Text></Flex> 
-          <Button colorScheme='teal' size='sm'> Más detalles</Button>          
+          <Link to={`/people/${person.name}`}>
+            <Button colorScheme='teal' size='sm'> Más detalles</Button> 
+          </Link>
+                   
         </Box>
     )
 }
