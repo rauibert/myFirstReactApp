@@ -13,7 +13,7 @@ export default function App() {
     <img src={logo} width="200"/>
     <Routes>
         <Route path="/" element={<PersonList />} />
-        <Route path="people/:id" element={<PersonDetails />} />
+        <Route path="people/:peopleid" element={<PersonDetails />} />
     </Routes>   
     
   </>

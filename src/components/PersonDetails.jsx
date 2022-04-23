@@ -1,6 +1,10 @@
+import { useParams } from "react-router-dom";
 
-export function PersonDetails(props){
+export function PersonDetails(){
+    const params = useParams();
+    console.log(params);
     return (
-        <div>Hola {props.id}</div>
+        
+        <div>Hola {params.peopleid}</div>
     )
 }

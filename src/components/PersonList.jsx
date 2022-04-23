@@ -23,6 +23,7 @@ export function PersonList(){
             </section>
         </>
     )
+    
 }
 
 
