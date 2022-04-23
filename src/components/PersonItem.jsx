@@ -3,6 +3,9 @@ import { GoPerson, GoCalendar } from "react-icons/go";
 import { Link } from "react-router-dom";
 
 export function PersonItem(person){
+    const url = person.url;
+    const personId = url.substring(url.lastIndexOf('people/')).slice(7);
+    
     return (
         <Box 
            
@@ -14,7 +17,7 @@ export function PersonItem(person){
           
           <Flex align="center"><GoPerson /><Text ml="2">Nombre: {person.name}</Text></Flex> 
           <Flex align="center"><GoCalendar /><Text ml="2">Fecha nacimiento: {person.birth_year} </Text></Flex> 
-          <Link to={`/people/${person.name}`}>
+          <Link to={`/people/${personId}`}>
             <Button colorScheme='teal' size='sm'> Más detalles</Button> 
           </Link>
                    

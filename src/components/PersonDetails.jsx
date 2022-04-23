@@ -1,10 +1,22 @@
 import { useParams } from "react-router-dom";
+import * as API from "../services/swpeople";
+import {useState, useEffect} from "react";
 
 export function PersonDetails(){
-    const params = useParams();
-    console.log(params);
+    const {peopleid} = useParams();
+
+    const [people, setPeople] = useState([]);
+
+    useEffect(()=>{
+        API.getPeopleById(peopleid)
+        .then(setPeople)
+        .catch(console.log);
+    }, [peopleid]);
+    
     return (
         
-        <div>Hola {params.peopleid}</div>
+        <div>
+            <pre>{JSON.stringify(people)}</pre>
+        </div>
     )
 }

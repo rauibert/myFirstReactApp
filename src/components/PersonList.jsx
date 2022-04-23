@@ -8,7 +8,7 @@ export function PersonList(){
     const [people, setPeople] = useState([]);
 
     useEffect(()=>{
-      API.getAllPeople().then(setPeople);
+      API.getAllPeople().then(setPeople).catch(console.log);;
     }, []);
     
     return (
